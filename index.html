@@ -4,11 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <script defer src="login.js"></script>
     <title>Momentum</title>
   </head>
   <body>
-    <form id="login-form">
+    <form id="login-form" class="hidden">
       <input
         id="user-name"
         type="text"
@@ -19,5 +20,6 @@
       />
       <input type="submit" value="LOGIN" />
     </form>
+    <h1 id="greeting" class="hidden"></h1>
   </body>
 </html>
