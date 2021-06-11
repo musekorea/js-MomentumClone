@@ -8,9 +8,16 @@
     <title>Momentum</title>
   </head>
   <body>
-    <form>
-      <input id="user-name" type="text" name="user-name" />
-      <input id="submit-name" type="submit" value="LOGIN" />
+    <form id="login-form">
+      <input
+        id="user-name"
+        type="text"
+        name="user-name"
+        placeholder="Write your name"
+        maxlength="15"
+        required
+      />
+      <input type="submit" value="LOGIN" />
     </form>
   </body>
 </html>

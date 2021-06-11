@@ -1,9 +1,9 @@
-const userName = document.querySelector('#user-name');
-const submitName = document.querySelector('#submit-name');
+const loginForm = document.querySelector('#login-form');
 
-submitName.addEventListener('click', function (event) {
+const userName = document.querySelector('#user-name');
+
+loginForm.addEventListener('submit', function (event) {
   event.preventDefault();
-  console.dir(userName);
   const nameValue = userName.value;
   console.log(nameValue);
 });
