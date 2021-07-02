@@ -1,6 +1,5 @@
 const quote = document.querySelector('#quotes span:first-child');
 const author = document.querySelector('#quotes span:last-child');
-console.log(author, quote);
 
 const quoteFetch = async () => {
   const data = await fetch('https://type.fit/api/quotes');
