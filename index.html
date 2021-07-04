@@ -9,6 +9,8 @@
     <script defer src="./js/clock.js"></script>
     <script defer src="./js/quotes.js"></script>
     <script defer src="./js/background.js"></script>
+    <script defer src="./js/todo.js"></script>
+
     <title>Momentum</title>
   </head>
   <body>
@@ -25,6 +27,18 @@
     </form>
     <h1 id="greeting" class="hidden"></h1>
     <h2 id="clock"></h2>
+    <div id="todo-container">
+      <form id="todo-form">
+        <input
+          id="todo-input"
+          type="text"
+          placeholder="Write a To Do & Press
+        Enter"
+          required
+        />
+      </form>
+      <ul id="todo-list"></ul>
+    </div>
     <div id="quotes">
       <span></span><br />
       <span></span>

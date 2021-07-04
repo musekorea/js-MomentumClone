@@ -4,7 +4,6 @@ const randomBackground = images[randomNum];
 
 const background = document.createElement('img');
 background.src = `../img/${randomBackground}`;
-console.log(background);
 
 document.body.appendChild(background);
 //const form = document.querySelector('form');
