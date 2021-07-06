@@ -28,7 +28,10 @@ function saveTodo(newTodo) {
 
 function loadTodo() {
   const localTodos = localStorage.getItem('todos');
-  console.log(localTodos);
+
+  localTodos.split(',').forEach((todo) => {
+    addTodo(todo);
+  });
 }
 
 todoForm.addEventListener('submit', (e) => {
