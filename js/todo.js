@@ -28,7 +28,6 @@ function saveTodo(newTodo) {
 
 function loadTodo() {
   const localTodos = localStorage.getItem('todos');
-
   localTodos.split(',').forEach((todo) => {
     addTodo(todo);
   });
@@ -43,4 +42,9 @@ todoForm.addEventListener('submit', (e) => {
   saveTodo(newTodo);
 });
 
-loadTodo();
+function init() {
+  todos.push(localStorage.getItem('todos'));
+  console.log(todos);
+  loadTodo();
+}
+init();
