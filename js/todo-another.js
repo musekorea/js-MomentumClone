@@ -23,12 +23,13 @@ function addTodo(newTodo) {
 
 function saveTodo() {
   console.log(todos);
-  localStorage.setItem('todos', todos);
+  localStorage.setItem('todos', JSON.stringify(todos));
 }
 
 function loadTodo() {
   const localTodos = localStorage.getItem('todos');
-  localTodos.split(',').forEach((todo) => {
+  const parsedTodos = JSON.parse(localTodos);
+  parsedTodos.forEach((todo) => {
     addTodo(todo);
   });
 }
@@ -43,8 +44,11 @@ todoForm.addEventListener('submit', (e) => {
 });
 
 function init() {
-  todos.push(localStorage.getItem('todos'));
-  console.log(todos);
-  loadTodo();
+  if (todos.length === 0) {
+    return;
+  } else {
+    loadTodo();
+    todos = JSON.parse(localStorage.getItem('todos'));
+  }
 }
 init();
