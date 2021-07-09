@@ -5,14 +5,24 @@ const todoInput = todoForm.querySelector('#todo-input');
 let todos = [];
 
 function deleteTodo(e) {
+  console.log(e.target.parentElement);
+  const idNum = e.target.parentElement.id;
   const li = e.target.parentNode;
   li.remove();
+  console.log(todos);
+  todos = todos.filter((item) => {
+    console.log(item.id, idNum);
+    return item.id !== Number(idNum);
+  });
+  console.log(todos);
+  localStorage.setItem('todos', JSON.stringify(todos));
 }
 
-function addTodo(newTodo) {
+function addTodo(newTodoObj) {
   const li = document.createElement('li');
+  li.id = newTodoObj.id;
   const span = document.createElement('span');
-  span.innerText = `${newTodo} `;
+  span.innerText = `${newTodoObj.content} `;
   const btn = document.createElement('button');
   btn.innerText = `🧺`;
   li.appendChild(span);
@@ -22,15 +32,14 @@ function addTodo(newTodo) {
 }
 
 function saveTodo() {
-  console.log(todos);
   localStorage.setItem('todos', JSON.stringify(todos));
 }
 
 function loadTodo() {
   const localTodos = localStorage.getItem('todos');
   const parsedTodos = JSON.parse(localTodos);
-  parsedTodos.forEach((todo) => {
-    addTodo(todo);
+  parsedTodos.forEach((todoObj) => {
+    addTodo(todoObj);
   });
 }
 
@@ -38,17 +47,19 @@ todoForm.addEventListener('submit', (e) => {
   e.preventDefault();
   const newTodo = todoInput.value;
   todoInput.value = ``;
-  addTodo(newTodo);
-  todos.push(newTodo);
+  const newTodoObj = { id: Date.now(), content: newTodo };
+  addTodo(newTodoObj);
+  todos.push(newTodoObj);
   saveTodo();
 });
 
 function init() {
-  if (todos.length === 0) {
+  todos = JSON.parse(localStorage.getItem('todos'));
+  if (todos === null) {
+    todos = [];
     return;
   } else {
     loadTodo();
-    todos = JSON.parse(localStorage.getItem('todos'));
   }
 }
 init();
