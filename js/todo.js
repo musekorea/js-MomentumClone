@@ -25,7 +25,7 @@ function saveTodo() {
   console.log(todos);
   localStorage.setItem('todos', todos);
 }
-
+// 이 버젼은 JSON 사용하지 않은 버젼
 function loadTodo() {
   const localTodos = localStorage.getItem('todos');
   localTodos.split(',').forEach((todo) => {
