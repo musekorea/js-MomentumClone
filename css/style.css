@@ -1,3 +1,74 @@
 .hidden {
   display: none;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+img {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+#weather {
+  position: absolute;
+  right: 0px;
+  padding: 10px;
+  color: white;
+  font-size: large;
+}
+#clock {
+  position: relative;
+  top: 350px;
+  color: white;
+  font-size: 100px;
+}
+#quotes {
+  position: fixed;
+  bottom: 20px;
+  color: white;
+  text-align: center;
+  font-size: 20px;
+}
+#todo-container {
+  position: absolute;
+  top: 50px;
+  background-color: rgba(0, 0, 0, 0.233);
+  border-radius: 20px;
+  width: 250px;
+  padding: 10px;
+  height: 300px;
+  overflow: hidden;
+  color: white;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.6);
+}
+#todo-input {
+  position: fixed;
+  top: 305px;
+  transform: translateX(8%);
+  background-color: #e9e9e9;
+  border: none;
+  border-radius: 20px;
+  width: 200px;
+  padding: 10px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+}
+#login-form {
+  position: absolute;
+  bottom: 180px;
+}
+#greeting {
+  position: absolute;
+  bottom: 180px;
+  font-size: 40px;
+  color: white;
+}
